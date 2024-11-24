@@ -9,3 +9,5 @@ var accountBalanceAfterPurchase = function (purchaseAmount) {
   else purchaseAmount = purchaseAmount + (10 - rem);
   return 100 - purchaseAmount;
 };
+
+//rem = remaining amount
