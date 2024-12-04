@@ -11,3 +11,4 @@ var accountBalanceAfterPurchase = function (purchaseAmount) {
 };
 
 //rem = remaining amount
+// this one was fun to learn, more of these would be a great idea
