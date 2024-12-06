@@ -42,3 +42,7 @@ var areDeeplyEqual = function (o1, o2) {
 
 //!React.js
 //uses Oject.is() instead of === for comparing props and states in its reconciliation process.
+
+//!Anything that can be solved with recursion can also be solved with a stack!
+
+//Reason is that recursion relies on the call stack to manage function calls and handle the recursive process. On the other hand, a stack data structure can mimic the behavior of the call stack, allowing us to implement the same logic iteratively. This equivalence is based on the fact that both approaches follow the same //**depth-first traversal pattern**//.
