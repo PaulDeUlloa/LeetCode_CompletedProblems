@@ -30,3 +30,15 @@ var areDeeplyEqual = function (o1, o2) {
 
   return true;
 };
+
+//!strict equality ('===')
+//compares values for primitive types and references for objects and arrays.
+
+//!loose equality ('==')
+//performs coercion and compares values for primitive types and references for objects and arrays.
+
+//!Object.is
+//compares values using the SameValueZero algorithm and treats certain cases differently, such as positive and negative zeros and NaN.
+
+//!React.js
+//uses Oject.is() instead of === for comparing props and states in its reconciliation process.
