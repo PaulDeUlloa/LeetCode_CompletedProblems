@@ -62,3 +62,18 @@ var areDeeplyEqual = function (o1, o2) {
 
 //   return stringifiedO1 === stringifiedO2;
 // };
+
+//! Object.entries():
+// O(N) - Returns an array of [key, value] pairs, iterating through all enumerable properties once.
+
+//! Array.prototype.sort():
+// O(NlogN) - Sorts elements in place using an efficient sorting algorithm like QuickSort or MergeSort.
+
+//! Object.fromEntries():
+// O(N) - Transforms key-value pairs into an object by iterating through the entries once.
+
+//! JSON.stringify():
+// O(N) - Converts a JavaScript value to a JSON string by visiting each node in the object tree.
+
+//! ===:
+// O(N) - The equality operator in JavaScript has a linear time complexity for strings, comparing each character if needed.
