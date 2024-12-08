@@ -46,3 +46,19 @@ var areDeeplyEqual = function (o1, o2) {
 //!Anything that can be solved with recursion can also be solved with a stack!
 
 //Reason is that recursion relies on the call stack to manage function calls and handle the recursive process. On the other hand, a stack data structure can mimic the behavior of the call stack, allowing us to implement the same logic iteratively. This equivalence is based on the fact that both approaches follow the same //**depth-first traversal pattern**//.
+
+//We can also use JSON.stringify and Sorting:
+
+// function helper(key, value) {
+//   if (value && typeof value === "object" && !Array.isArray(value))
+//       return Object.fromEntries(Object.entries(value).sort());
+//   else
+//       return value;
+// }
+
+// var areDeeplyEqual = function(o1, o2) {
+//   const stringifiedO1 = JSON.stringify(o1, helper);
+//   const stringifiedO2 = JSON.stringify(o2, helper);
+
+//   return stringifiedO1 === stringifiedO2;
+// };
