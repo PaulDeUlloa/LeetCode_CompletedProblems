@@ -27,7 +27,7 @@ var jsonStringify = function (object) {
   return String(object);
 };
 
-// Used JSON-like String Concatenation
+//! Used JSON-like String Concatenation ^^
 
 // Breakdown:
 // First we need to check if the input object is null and if yes then return the string null. This is because in JavaScript, the typeof null returns object .
@@ -42,3 +42,41 @@ var jsonStringify = function (object) {
 // If the object is a string, we will wrap the string value in double quotes to represent it properly in JSON.
 // For other types of values (numbers, booleans), they are converted to strings using the String() function.
 // In the end the resulting JSON string representation is returned.
+
+//!Solution 2
+
+var jsonStringify = function (object) {
+  switch (typeof object) {
+    case "object":
+      if (Array.isArray(object)) {
+        const elements = object.map((element) => jsonStringify(element));
+        return `[${elements.join(",")}]`;
+      } else if (object) {
+        const keys = Object.keys(object);
+        const keyValuePairs = keys.map(
+          (key) => `"${key}":${jsonStringify(object[key])}`
+        );
+        return `{${keyValuePairs.join(",")}}`;
+      } else {
+        return "null";
+      }
+    case "boolean":
+    case "number":
+      return `${object}`;
+    case "string":
+      return `"${object}"`;
+    default:
+      return "";
+  }
+};
+
+// It's worth noting that the `case` statement can have multiple labels, like this:
+
+switch (expression) {
+  case "value1":
+  case "value2":
+    // code block that will be executed for both values
+    break;
+}
+
+// In this case, the colon is still part of the label syntax, but the code block that follows will be executed for both values.
