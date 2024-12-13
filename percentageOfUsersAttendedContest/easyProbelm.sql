@@ -1,5 +1,5 @@
 
-# Write your MySQL query statement below
+-- MySQL query statement below
 SELECT
     contest_id,
     ROUND(
@@ -12,3 +12,5 @@ GROUP BY
 ORDER BY
     percentage DESC,
     contest_id ASC;
+
+-- Capital letters are essential to SQL queries.
