@@ -13,6 +13,19 @@ var runningSum = function (nums) {
   return result;
 };
 
-//approach 2 could be - //*Using Input Array for Output*//
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var runningSum = function (nums) {
+  for (let i = 1; i < nums.length; i++) {
+    nums[i] = nums[i - 1] + nums[i];
+  }
+  return nums;
+};
+
+//Approach 2 in JS
+
+//*Using Input Array for Output*//
 //Be wary though about when modifying the input array
 //because unexpected behavior could occur when an array after being used as input because it no longer has it's original values because they have been overwritten
