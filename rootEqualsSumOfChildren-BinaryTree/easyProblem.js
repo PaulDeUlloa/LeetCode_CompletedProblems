@@ -17,3 +17,7 @@ var checkTree = function (root) {
     return false;
   }
 };
+
+//We say root.left.val instead of root.val.left so we know which value to go to
+// first, before a value is provided. Basically the way I understood it was to give it
+// directions first then it'll know which value to give you. So its not blindly giving you a value.
