@@ -12,3 +12,7 @@ var runningSum = function (nums) {
   }
   return result;
 };
+
+//approach 2 could be - //*Using Input Array for Output*//
+//Be wary though about when modifying the input array
+//because unexpected behavior could occur when an array after being used as input because it no longer has it's original values because they have been overwritten
