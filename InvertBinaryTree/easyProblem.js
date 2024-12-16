@@ -81,3 +81,11 @@ var invertTree = function (root) {
 // The let keyword is used to declare the queue variable instead of Queue<TreeNode> queue.
 
 // Everything else is the same. The code uses a queue to iterate over the nodes of the binary tree, swapping the left and right child nodes of each node as it goes.
+
+//* It would not work correctly. This is because the first assignment would overwrite the value of `current.left` with the value of `current.right`, and then the second assignment would try to assign the new value of `current.left` (which is now the old value of `current.right`) back to `current.right`. This would effectively lose the original value of `current.left`. By using a temporary variable `temp` to store the original value of `current.left`, the code can safely swap the left and right child nodes:
+
+let temp = current.left;
+current.left = current.right;
+current.right = temp;
+
+//! This way, the original value of `current.left` is preserved in `temp`, and can be safely assigned to `current.right` after `current.left` has been overwritten with the value of `current.right`.
