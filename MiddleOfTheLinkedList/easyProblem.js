@@ -25,6 +25,8 @@ var middleNode = function (head) {
 
 //! Approach 2:
 
+// When traversing the list with a pointer slow, make another pointer fast that traverses twice as fast. When fast reaches the end of the list, slow must be in the middle.
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
