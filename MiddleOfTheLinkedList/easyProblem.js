@@ -1,32 +1,9 @@
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
-var middleNode = function (head) {
-  let A = [head];
-
-  while (A[A.length - 1].next != null) A.push(A[A.length - 1].next);
-
-  return A[Math.trunc(A.length / 2)];
-};
-
-//* Approach 1: Output to Array
+//! Approach 1: Output to Array
 
 // Put every node into an array A in order. Then the middle node is just A[A.length // 2], since we can retrieve each node by index.
 
 // We can initialize the array to be of length 100, as we're told in the problem description that the input contains between 1 and 100 nodes.
 
-//! Approach 2:
-
-// When traversing the list with a pointer slow, make another pointer fast that traverses twice as fast. When fast reaches the end of the list, slow must be in the middle.
-
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -40,10 +17,25 @@ var middleNode = function (head) {
  */
 var middleNode = function (head) {
   let A = [head];
+  //Here, we create an array called A and initialize it with the head node of the linked list. The purpose of this array is to store all nodes in the linked list sequentially.
 
   while (A[A.length - 1].next != null) A.push(A[A.length - 1].next);
+  //The loop continues as long as there is a next node for the last element in array A. Inside each iteration, we access the last element in array A using A[A.length - 1], and check if its .next property is not null. If it's not null, we push (add) that next node into array A.
 
   return A[Math.trunc(A.length / 2)];
+};
+
+//! Approach 2:
+
+// When traversing the list with a pointer slow, make another pointer fast that traverses twice as fast. When fast reaches the end of the list, slow must be in the middle.
+
+var middleNode = function (head) {
+  slow = fast = head;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  return slow;
 };
 
 // Summary
