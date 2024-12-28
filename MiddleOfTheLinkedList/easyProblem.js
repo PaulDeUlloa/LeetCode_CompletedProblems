@@ -23,6 +23,9 @@ var middleNode = function (head) {
   //The loop continues as long as there is a next node for the last element in array A. Inside each iteration, we access the last element in array A using A[A.length - 1], and check if its .next property is not null. If it's not null, we push (add) that next node into array A.
 
   return A[Math.trunc(A.length / 2)];
+  // After exiting from the while loop, all nodes have been collected into array A. To find and return the middle node, we calculate its index using integer division:
+  // We divide the length of our collected nodes (A.length) by 2.
+  // The use of Math.trunc() ensures that if there are an odd number of elements (e.g., five), truncating gives us two—pointing to position three when counting from zero—thus returning exactly our middle point!
 };
 
 //! Approach 2:
