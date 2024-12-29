@@ -9,6 +9,7 @@
  */
 var canConstruct = function (ransomNote, magazine) {
   const makeCountsMap = (s) => {
+    //If there’s one   ^^^ parameter, you can omit parentheses: so s instead of (s).
     const counts = {};
     for (const c of s) {
       counts[c] = (counts[c] || 0) + 1;
@@ -74,3 +75,11 @@ var canConstruct = function (ransomNote, magazine) {
 // Helper Function: The inner helper function sortedCharacterStack sorts and reverses characters from its input string, maintaining clarity within the main logic.
 
 // Main Logic: The core logic checks whether you can construct the ransomNote from available letters in the magazine.
+
+//! Summary:
+
+//Traditional Functions lose their reference to ‘self’ based on how they are invoked unless properly bound with .bind(), stored methods lost scope unless carefully managed.
+
+// Arrow Functions, however retain access via lexical scoping so they always refer back up through closures—making them particularly useful when dealing with callbacks where preserving contextual references is necessary (e.g., event handlers).
+
+// This difference helps prevent common pitfalls associated with managing contexts across different layers or scopes within your applications!
