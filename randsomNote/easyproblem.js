@@ -34,3 +34,37 @@ var canConstruct = function (ransomNote, magazine) {
 
   return true;
 };
+
+//* Approach 4: Sorting and Stacks
+
+/**
+ * @param {string} ransomNote
+ * @param {string} magazine
+ * @return {boolean}
+ */
+var canConstruct = function (ransomNote, magazine) {
+  const sortedCharacterStack = (s) => {
+    const charArray = s.split("");
+    charArray.sort();
+    return charArray.reverse();
+  };
+
+  if (ransomNote.length > magazine.length) {
+    return false;
+  }
+
+  const magazineStack = sortedCharacterStack(magazine);
+  const ransomNoteStack = sortedCharacterStack(ransomNote);
+
+  let i = 0;
+  let j = 0;
+
+  while (i < magazineStack.length && j < ransomNoteStack.length) {
+    if (magazineStack[i] === ransomNoteStack[j]) {
+      j++;
+    }
+    i++;
+  }
+
+  return j === ransomNoteStack.length;
+};
