@@ -68,3 +68,9 @@ var canConstruct = function (ransomNote, magazine) {
 
   return j === ransomNoteStack.length;
 };
+
+// Variable Function: The canConstruct variable is assigned an arrow function which takes ransomNote and magazine as parameters.
+
+// Helper Function: The inner helper function sortedCharacterStack sorts and reverses characters from its input string, maintaining clarity within the main logic.
+
+// Main Logic: The core logic checks whether you can construct the ransomNote from available letters in the magazine.
