@@ -15,3 +15,5 @@ var numberOfSteps = function (num) {
   }
   return initialSteps;
 };
+
+// simple while loop and then returning initial steps. we also initialize the steps to zero at the beginning.
