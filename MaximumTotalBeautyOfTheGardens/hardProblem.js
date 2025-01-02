@@ -9,3 +9,81 @@
 // The number of complete gardens multiplied by full.
 // The minimum number of flowers in any of the incomplete gardens multiplied by partial. If there are no incomplete gardens, then this value will be 0.
 // Return the maximum total beauty that Alice can obtain after planting at most newFlowers flowers.
+
+/**
+ * @param {number[]} flowers
+ * @param {number} newFlowers
+ * @param {number} target
+ * @param {number} full
+ * @param {number} partial
+ * @return {number}
+ */
+function maximumBeauty(A, newFlowers, t, full, part) {
+  //limit each garden's flowers to a maximum of target
+  A = A.map((a) => Math.min(t, a));
+  A.sort((a, b) => a - b);
+
+  //two edge cases
+  if (Math.min(...A) === t) return full * A.length;
+
+  if (newFlowers >= t * A.length - A.reduce((accum, curr) => accum + curr)) {
+    return Math.max(full * A.length, full * (A.length - 1) + part * (t - 1));
+  }
+
+  //build the array 'cost'
+
+  let cost = [0];
+
+  for (let i = 1; i < A.length; i++) {
+    let pre = cost[cost.length - 1];
+    cost.push(pre + i * (A[i] - A[i - 1]));
+  }
+
+  // skip gardens that already have 'target' Flowers
+  let j = A.length - 1;
+
+  while (j >= 0 && A[j] === t) {
+    j--;
+  }
+
+  //start the iteration
+  let ans = 0;
+
+  function bisectRight(arr, target) {
+    let low = 0;
+    let high = arr.length;
+
+    while (low < high) {
+      const mid = Math.floor((low + high) / 2);
+      if (arr[mid] <= target) {
+        low = mid + 1; //move right if curr element is less than or equal to target
+      } else {
+        high = mid; //move left otherwise
+      }
+    }
+
+    return low; //this will be the index where we can insert 'target'
+  }
+
+  while (newFlowers >= 0 && j >= 0) {
+    //find the index where we can afford to spend 'new'.
+    let idx = bisectRight(cost, newFlowers);
+    idx = Math.min(j, idx - 1);
+
+    //calculate current minimum flower in incomplete garden.
+    const bar = A[idx] + Math.floor((newFlowers - cost[idx]) / (idx + 1));
+
+    ans = Math.max(ans, bar * part + full * (A.length - j - 1));
+
+    //deduct the cost for completing garden j from new and move on.
+
+    newFlowers -= t - A[j];
+
+    if (newFlowers < 0) {
+      break;
+    }
+
+    j--;
+  }
+  return ans;
+}
