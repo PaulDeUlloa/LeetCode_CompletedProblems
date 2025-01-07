@@ -23,3 +23,5 @@ var isValid = function (s) {
   }
   return stack.length === 0;
 };
+
+// the variable c is just a random letter. I tested it with p and it still works great.
