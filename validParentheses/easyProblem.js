@@ -25,3 +25,5 @@ var isValid = function (s) {
 };
 
 // the variable c is just a random letter. I tested it with p and it still works great.
+
+// each time we are cycling through the stack we are checking for similar parentheses and then popping them until the array is valid or invalid.
