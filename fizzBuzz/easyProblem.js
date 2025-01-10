@@ -26,6 +26,9 @@ var fizzBuzz = function (n) {
 
 // The moment you hear of FizzBuzz you think whether the number is divisible by 3, 5 or both.
 
+//! we check if a number is divisible by 3 or 5 since it is a simple operation using the modulo operator (%) which is very fast in most programming languages, making it ideal for filtering large datasets quickly.
+//!If the result is 0, then n is divisible by the number checked.
+
 // Algorithm:
 
 // Initialize an empty answer list.
