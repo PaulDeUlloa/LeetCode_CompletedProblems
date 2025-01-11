@@ -31,8 +31,8 @@ var fizzBuzz = function (n) {
 
 // Algorithm:
 
-// Initialize an empty answer list.
-// Iterate on the numbers from 1...N.
+// Initialize an empty answer list. By creating an empty array.
+// Iterate on the numbers from 1...N. We start at 1.
 // For every number, if it is divisible by both 3 and 5, add FizzBuzz to the answer list.
 // Else, Check if the number is divisible by 3, add Fizz.
 // Else, Check if the number is divisible by 5, add Buzz.
