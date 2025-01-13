@@ -106,3 +106,13 @@ var romanToInt = function (s) {
   }
   return total;
 };
+
+//* Complexity Analysis
+
+// Time complexity : O(1).
+
+// Same as Approach 1.
+
+// Space complexity : O(1).
+
+// Same as Approach 1.
