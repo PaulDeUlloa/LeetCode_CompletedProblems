@@ -75,6 +75,16 @@ var romanToInt = function (s) {
 
 //! Approach 3: Right-to-Left Pass
 
+// Utilizing this means that we can process one symbol each time we go around the main loop. We still need to determine whether or not our current symbol should be added or subtracted by looking at the neighbour though.
+
+// In Approach 1, we had to be careful when inspecting the next symbol to not go over the end of the string. This check wasn't difficult to do, but it increased the code complexity a bit, and it turns out we can avoid it with this approach!
+
+// Observe the following:
+
+// Without looking at the next symbol, we don't know whether or not the left-most symbol should be added or subtracted.
+// The right-most symbol is always added. It is either by itself, or the additive part of a pair.
+// So, what we can do is initialise sum to be the value of the right-most (last) symbol. Then, we work backwards through the string, starting from the second-to-last-symbol. We check the symbol after (i + 1) to determine whether the current symbol should be "added" or "subtracted".
+
 /**
  * @param {string} s
  * @return {number}
