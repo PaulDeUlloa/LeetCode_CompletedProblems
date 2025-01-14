@@ -37,3 +37,30 @@ var mergeTwoLists = function (list1, list2) {
 // The first call to mergeTwoLists does not return until the ends of both list1 and list2 have been reached, so n+m stack frames consume O(n+m) space.
 
 //! Approach 2: Iteration:
+
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function (list1, list2) {
+  let prehead = new ListNode(-1);
+  let prev = prehead;
+
+  while (list1 != null && list2 != null) {
+    if (list1.val <= list2.val) {
+      prev.next = list1;
+      list1 = list1.next;
+    } else {
+      prev.next = list2;
+      list2 = list2.next;
+    }
+    prev = prev.next;
+  }
+  if (list1 != null) {
+    prev.next = list1;
+  } else {
+    prev.next = list2;
+  }
+  return prehead.next;
+};
