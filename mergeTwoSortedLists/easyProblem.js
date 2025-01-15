@@ -38,6 +38,8 @@ var mergeTwoLists = function (list1, list2) {
 
 //! Approach 2: Iteration:
 
+//* this approach made more sense to me, it could have been the better animation that helped me grasp it more.
+
 /**
  * @param {ListNode} list1
  * @param {ListNode} list2
