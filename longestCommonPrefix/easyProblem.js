@@ -16,3 +16,5 @@ var longestCommonPrefix = function (strs) {
     }
   return prefix;
 };
+
+// this checks the strings horizontally which is on way of scanning our strings for common prefixes.
