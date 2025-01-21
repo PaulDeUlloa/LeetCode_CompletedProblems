@@ -8,6 +8,7 @@ var longestCommonPrefix = function (strs) {
   //This checks if the input array strs is empty. If it is, there's no prefixes to find, so it returns an empty string.
   if (strs.length === 0) return "";
 
+  //The variable prefix starts off as the first string in the list (strs[0]). This will be used as a reference point for finding commonality with other strings.
   let prefix = strs[0];
 
   for (let i = 1; i < strs.length; i++)
