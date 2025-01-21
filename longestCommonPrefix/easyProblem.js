@@ -5,6 +5,7 @@
  * @return {string}
  */
 var longestCommonPrefix = function (strs) {
+  //This checks if the input array strs is empty. If it is, there's no prefixes to find, so it returns an empty string.
   if (strs.length === 0) return "";
 
   let prefix = strs[0];
