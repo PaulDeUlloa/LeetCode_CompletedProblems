@@ -23,6 +23,7 @@ var longestCommonPrefix = function (strs) {
       //At any point during trimming down our possible longest common prefixes, if we reach an empty string, there’s no commonality left—it exits early by returning an empty result immediately.
       if (prefix === "") return "";
     }
+  //After checking all strings in your array and potentially trimming down your initial guess at what might be a longest common prefix based on matches against each subsequent word—the final value stored in prefix represents your answer which gets returned here.
   return prefix;
 };
 
