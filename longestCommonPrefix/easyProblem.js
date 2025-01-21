@@ -30,3 +30,18 @@ var longestCommonPrefix = function (strs) {
 //*Using .slice() helps cut down on mismatches incrementally until you either find something shared across all input strings or exhaust possibilities.The condition checks whether any part resembles each other at their respective beginnings using indexing methods—ensuring efficiency even when dealing with multiple different strings throughout iterations.This approach has reasonable time complexity relative to how many words you're comparing and their lengths since we're only looking back at those actively being compared rather than building longer structures unnecessarily!
 
 // this checks the strings horizontally which is on way of scanning our strings for common prefixes.
+
+//!Algorithm without notes for clarity
+/**
+ * @param {string[]} strs
+ * @return {string}
+ */
+var longestCommonPrefix = function (strs) {
+  if (strs.length === 0) return "";
+  let prefix = strs[0];
+  while (strs[i].indexOf(prefix) != 0) {
+    prefix = prefix.slice(0, prefix.length - 1);
+    if (prefix === "") return "";
+  }
+  return prefix;
+};
