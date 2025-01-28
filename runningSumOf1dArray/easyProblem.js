@@ -3,7 +3,9 @@
  * @return {number[]}
  */
 var runningSum = function (nums) {
+  //we create a new array here and assign it to result. This is evaluated based on the whole nums.length.
   const result = new Array(nums.length);
+
   result[0] = nums[0];
 
   for (let i = 1; i < nums.length; i++) {
