@@ -33,9 +33,9 @@ var removeDuplicates = function (nums) {
   let insertIndex = 1;
 
   for (let i = 1; i < nums.length; i++) {
-    //here is where we skip an index if we see a duplicate element.
+    //here is where we skip an index if we see a duplicate element
     if (nums[i - 1] != nums[i]) {
-      //here we store the unique element at insertIndex index and incrementing the insertIndex by 1
+      //here we store the unique element at insertIndex index and increment the insertIndex by 1
       nums[insertIndex] = nums[i];
       insertIndex++;
     }
