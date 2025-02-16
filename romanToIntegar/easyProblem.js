@@ -100,6 +100,8 @@ var romanToInt = function (s) {
     D: 500,
     M: 1000,
   };
+
+  // I understand lines 105-107 because they remind me of a waterfall that allows us to find the total.
   let lastSymbol = s[s.length - 1];
   let lastValue = values[lastSymbol];
   let total = lastValue;
