@@ -21,3 +21,5 @@ var checkZeroOnes = function (s) {
   }
   return numberOfOnes > numberOfZeros;
 };
+
+//lines 14 and 17 equal zero because they should not be altered if the other count is being added to. it seems like hard coding the other counts to only increase when told to.
