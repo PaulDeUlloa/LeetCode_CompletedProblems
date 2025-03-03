@@ -5,6 +5,12 @@
 // Change the array nums such that the first k elements of nums contain the elements which are not equal to val. The remaining elements of nums are not important as well as the size of nums.
 // Return k.
 
+//! In place algorithm:
+
+//* In Computer science an in-place algorithm is an algorithm that operates directly on the input data structure without requiring extra space proportional to the input size. Does not make a copy of the data structure.
+
+//!
+
 /**
  * @param {number[]} nums
  * @param {number} val
