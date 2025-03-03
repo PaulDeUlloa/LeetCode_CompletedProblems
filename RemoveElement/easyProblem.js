@@ -26,3 +26,26 @@ var removeElement = function (nums, val) {
   }
   return i;
 };
+
+//! Approach 2: Two Pointers - when elements to remove are rare
+
+/**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+var removeElement = function (nums, val) {
+  let i = 0;
+  let n = nums.length;
+
+  while (i < n) {
+    if (nums[i] == val) {
+      nums[i] = nums[n - 1];
+      //reduce array size by oone
+      n--;
+    } else {
+      i++;
+    }
+  }
+  return n;
+};
